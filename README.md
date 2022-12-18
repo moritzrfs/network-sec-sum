@@ -267,3 +267,40 @@ OSINT (Open Source Intelligence) ist eine Art der Ermittlung, die auf offenen, n
 - Hafnium: Angriff auf Microsoft Exchange Server
 
 ### Absicherung E-Mail
+- Nutzung von E-Mail Security Lösungen
+- Sandboxen
+
+## IOT
+IOT steht für Internet of Things. IOT ist ein Netzwerk, das aus vielen Geräten besteht, die über das Internet miteinander verbunden sind.
+
+- Viele Geräte im Einsatz
+- Häufig unmanaged
+
+
+## Operational Technology (OT)
+
+### Früher vs Heute
+- Früher: abgekoppelte Systeme
+- Früher: Glasfaser und Kupferleitungen
+- Früher: Betrieb auf speziellen Geräten
+- Heute: Cloud, IoT, SDWAN, etc.
+- Heute: Drahtlose Verbindungen
+- Heute: universelle Geräte
+
+### Absicherung OT
+- Asset Management
+- Segmentierung
+- Isolation von alten Systemen
+- SIEM
+
+## NAC
+NAC steht für Network Access Control. NAC ist eine Technologie, die es ermöglicht, die Sicherheit von Netzwerken zu verbessern, indem die Geräte, die auf das Netzwerk zugreifen, überprüft werden.
+
+### Zero Trust Ansatz
+- Keine Vertrauen in die Netzwerkumgebung
+- Verifizierung vor jedem Zugriff
+- MFA
+- Kontinuierliche Überwachung
+- Schutz vor internen Bedrohungen: z.B. durch die Nutzung von SIEM
+- Verschlüsselung
+- Schutz gegen externe Bedrohungen: z.B. durch die Nutzung von E-Mail Security Lösungen
