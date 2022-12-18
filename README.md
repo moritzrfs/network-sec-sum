@@ -279,6 +279,8 @@ IOT steht für Internet of Things. IOT ist ein Netzwerk, das aus vielen Geräten
 
 ## Operational Technology (OT)
 
+Operational Technology (OT) ist die Technologie, die die mechanischen und physischen Komponenten innerhalb eines Unternehmens, eines Produktionsprozesses oder einer Infrastruktur steuert, überwacht und optimiert. Dazu gehören Maschinen, Geräte, Sensoren, Instrumente und andere Geräte, die dazu beitragen, ein Netzwerk oder System zu errichten und zu verwalten.
+
 ### Früher vs Heute
 - Früher: abgekoppelte Systeme
 - Früher: Glasfaser und Kupferleitungen
@@ -292,6 +294,17 @@ IOT steht für Internet of Things. IOT ist ein Netzwerk, das aus vielen Geräten
 - Segmentierung
 - Isolation von alten Systemen
 - SIEM
+### OT vs IT
+
+| Kriterium | IT | OT |
+| --- | --- | --- |
+| Verfügbarkeit | mittel, Verzögerungen tolerierbar | sehr hoch, Verzögerungen nicht tolerierbar |
+| Echzeit | nein | ja |
+| Lebendauer Komponenten | kurz | lang |
+| Updates/Patches | häufig | selten |
+| Sicherheitsprüfung/Audit | geplant und beauftragt | gelegentlich |
+| Sicherheitsbewusstsein | hoch | niedrig aber steigend |
+
 
 ## NAC
 NAC steht für Network Access Control. NAC ist eine Technologie, die es ermöglicht, die Sicherheit von Netzwerken zu verbessern, indem die Geräte, die auf das Netzwerk zugreifen, überprüft werden.
