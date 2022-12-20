@@ -16,7 +16,7 @@ Sie untersuchen die drei VPN-Verbindungen Ihrer Firewall zu anderen Partnern.
 
 | VPN-Verbindung | Phase 1 | Phase 2 |
 | --- | --- | --- |
-| #1 | AES256/SHA1 | AES2S6/SHA1 |
+| #1 | AES256/SHA1 | AES256/SHA1 |
 | #2 | 3DES/MD5 | AES128/SHA-256 |
 | #3 | AES256/SHA-256 | AES128/SHA-256 |
 
@@ -24,11 +24,11 @@ Welche der Verbindungen sollten Sie aus Grunden der Sicherheit anpassen und waru
 ### Lösung
 Phase 1: Authentifizierungsphase (z.B. mit Pre-Shared Key)
 Phase 2: Verschlüsselungsphase (z.B. mit AES256)
-- VPN #1 ist sicher, da die Verbindung mit AES256 verschlüsselt wird
-- VPN #2 ist unsicher, da die Verbindung mit 3DES verschlüsselt wird. 3DES ist ein veraltetes Verfahren und sollte nicht mehr verwendet werden
-- VPN #3 ist sicher, da die Verbindung mit AES256 verschlüsselt wird. Auch die Verschlüsselung der Daten ist mit AES128 sicher.
+- VPN #1 ist semi-sicher, da die Verbindung mit AES256 verschlüsselt wird, aber SHA1 sowohl in der Authentifizierungsphase, als auch in der Verschlüsselungsphase, als Hashverfahren genutzt wird. SHA1 gilt nicht mehr als kollisionsfrei und sollte deswegen durch ein stärkeres Verfahren ausgetauscht werden.
+- VPN #2 ist unsicher, da die Verbindung mit 3DES verschlüsselt wird. 3DES ist ein veraltetes Verfahren und sollte nicht mehr verwendet werden. MD5 als Hashverfahren ist ebenfalls veraltet und gilt als unsicher.
+- VPN #3 ist sicher, da die Verbindung mit AES256 verschlüsselt wird. Auch die Verschlüsselung der Daten ist mit AES128 sicher. SHA-256 gilt heutzutage als kollisionfrei und ist somit ein sicheres Hashverfahren.
 
-VPN Verbindung 2 sollte aus Sicherheitsgründen angepasst werden.
+VPN Verbindung 1 & 2 sollte aus Sicherheitsgründen angepasst werden. 
 
 ## 3. Aufgabe
 Sie untersuchen das Firewall-Regelwerk eines mittelstandischen Unternehmens.
