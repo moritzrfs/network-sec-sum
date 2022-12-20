@@ -83,7 +83,7 @@ Das BSI veröffentlicht auf deren Webseite ein Kompendium zur Informationssicher
 Welche zwei Sicherheitsstufen gibt es dort (Neben der Kernabsicherung)?
 
 ### Lösung
-Das Kompendium heißt "IT-Grundschutzkataloge". Die zwei Sicherheitsstufen sind die Basisabsicherung und die Erweiterte Absicherung.
+Das Kompendium heißt "IT-Grundschutzkataloge". Die zwei Sicherheitsstufen sind die Basis-Absicherung und die Standard-Absicherung.
 
 ## 8. Aufgabe
 Ausgangslage
