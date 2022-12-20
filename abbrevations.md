@@ -22,4 +22,3 @@
 | ISO | International Organization for Standardization |
 | IOT | Internet of Things |
 | NAC | Network Access Control |
-| OSINT | Open Source Intelligence |
