@@ -1,4 +1,4 @@
-# Beispiel Fragen (aus der Vorlesung und vorherigen Jahrgängen)
+# Beispiel Fragen (vorheriger Jahrgang)
 
 ## 1. Aufgabe: Netzwerk Größe
 Das Netzwerk Ihres neuen Arbeitgebers besteht aus ca. 1000 Systemen, alle befinden sich ein einem großen Class-B Netzwerk 172.1600/16.
@@ -118,3 +118,23 @@ Langfristige Maßnahmen
 - Langfristig sollte darauf geachtet werden, dass zu dem bereits vorhandenen Server Systeme weitere Server hinzukommen. Dies ist wichtig, wenn ein redundanter Betrieb gewünscht ist. Ein redundanter Betrieb ist wichtig, wenn ein Ausfall des Servers nicht akzeptabel ist.
 - Zusätzlich sollte für die Systeme eine Backup-Lösung eingerichtet werden.
 - Ersetzen der Cisco Pix Firewall durch eine Firewall mit aktueller Software. Beispielsweise durch eine Next Generation Firewall, die eine Kombination aus Application Level Gateway Firewall, Intrusion Detection System und Intrusion Prevention System bietet. Sie überwacht den Netzwerkverkehr auf Protokollebene und kann unerwünschten Verkehr verhindern.
+
+# Beispiel Fragen (2022)
+
+## 1. Aufgabe
+Ausgangslage
+Die Kölnwasser GmbH versorgt den Großraum Köln mit Trinkwasser. Das Unternehmen ist seit 2 Jahren als kritische Infrastruktur (KRITIS) eingestuft. In diesem Jahr wurde nach längerer Suche ein Informationssicherheitsbeauftragter bestellt. Um die eigene IT zu testen, beauftragte dieser einen externen Security-Audit. Für die externe Firma erwies es sich als leicht, über einen Nebeneingang in das Gebäude zu gelangen und dort unbemerkt an einen Netzwerkport Ihr mitgebrachtes Notebook anzuschließen. Von dort war es einfach, sich im Client/Server Netzwerk unbemerkt weiter zu bewegen. Zum Beweis liefert das Audit-Team ein Screenshot von einem per Telnet erreichbaren Switch mit Standard-Kennwort-Zugang. Der Informationssicherheitsbeauftragte konfrontiert nach 2 Wochen das 3 köpfige IT-Team mit den Ergebnissen. Deren nachträgliche Untersuchung des Vorfalls blieb weitestgehend ohne Erfolg, da die Log-Daten durch fehlerhafte Zeitstempel nicht richtig zugeordnet werden konnten. Die Firewall-Systeme haben zudem sehr viele Firewall-Regeln die nicht mehr nachvollzogen werden können weil IT-Mitarbeiter das Unternehmen verlassen haben.
+Der Geschäftsführer des Unternehmens hätte gerne ein Sicherheitskonzept. Für eine erste Diskussionsgrundlage soll ein Entwurf vorbereitet werden.
+![](media/Bild1.png)
+
+### Lösung
+
+**Maßnahmen – Welche technischen und/oder organisatorische Maßnahmen würden Sie dem Unternehmen empfehlen? Mit welcher Begründung?**
+1. Angemessene Sicherheitskontrolle zu den Gebäuden und Räumen, in denen kritische Systeme betrieben werden. Dies kann durch eine Videoüberwachung erfolgen + Alarmierung bei unerlaubtem Zugang. Als erste Maßnahme die betroffene Tür, über die Zugang erlangt wurde, dauerhaft verschließen.
+2. Nicht mehr benötigte Netzwerkports physikalisch entfernen oder über eine Lösung wie DHCP-Snooping oder Port-Security absichern. Kurzfristig können Verbindungen der nicht genutzten Ports vom Switch getrennt werden.
+3. Das Standard Kennwort für den verwendeten Switch muss umgehend geändert werden. Die Verwendung von Standard Kennwörtern ist ein Sicherheitsrisiko.
+4. Das Telnet Protokoll sollte deaktiviert werden. Telnet ist ein unsicheres Protokoll und sollte nicht mehr verwendet werden. Stattdessen soll SSH verwendet werden. Kurzfristig kann Telnet durch eine Firewall-Regel blockiert werden.
+5. Dass die aufgezeichneten Logging-Daten nicht richtig zugeordnet werden können, ist problematisch. Das System, das die Logs erfasst oder aufbereitet sollte umgehend auf Fehler überprüft werden. Langfristig sollte ein System zur Aufzeichnung der Logs eingerichtet werden (zentrales Logging Management), oder besser eine SIEM-Lösung (Security Information and Event Management) (Auch gefordert aufgrund Betreiber Kritischer Infrastruktur) oder noch besser ein SOC (Security Operations Center) eingerichtet werden, durch das nach Analyse aller Logs und Events auch automatisiert Maßnahmen anhand eines definierten Regelwerks einleitet.
+6. Das Firewall System sollte hinsichtlich des unübersichtlichen Regelwerks überprüft werden. Es sollte geprüft werden, ob die Regelwerke noch aktuell sind und ob sie noch benötigt werden. Außerdem sollte geprüft werden, ob die Regelwerke noch nachvollziehbar sind. Langfristig sollte ein Firewall-System eingerichtet werden, das eine übersichtliche Regelwerke bietet und die Regeln nachvollziehbar sind. Außerdem sollte ein Firewall-System eingerichtet werden, das eine automatische Erkennung von Angriffen und automatische Maßnahmen ermöglicht. Alle Änderungen an den Firewall-Regeln sollten protokolliert werden.
+7. Der vorliegende Netzwerkplan zeigt zudem, dass das interne Firmennetz direkt hinte dem Firewall Cluster angesiedelt wurde. Eine bessere Methode wäre, die DMZ Anbindung an das Internet durch ein Firewall Cluster abzusicher, hinter der DMZ einen weiteren Firewall Schutzwall einzusetzen, und dahinter wideru das interne Firmennetz zu platzieren. Dadurch könnte weiterhin ein höheres Schutzniveau erzielt werden.
+8. Das verwendete Client- und Servernetz ist mit dem verwendeten Class B Netz zudem viel zu groß gewählt. Es sollte in kleinere Subnetze unterteilt werden. Dadurch wird die Netzwerkverwaltung vereinfacht und die Sicherheit erhöht. Denkbar wäre eine Unterteilung in ein oder mehrere Server VLANs sowie mehrere Client Netze, die beispielsweise anhand von Standorten oder Abteilungen unterteilt werden. Idealerweise würden hierfür Class C Netze (/24) verwendet werden.
